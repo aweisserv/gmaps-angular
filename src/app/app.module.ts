@@ -9,6 +9,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material.module';
 import { MapaComponent } from './components/mapa/mapa.component';
 
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,10 @@ import { MapaComponent } from './components/mapa/mapa.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAQfa1l6w7Y2gYQz-xh4iEYlnyxWz9rmT0'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
