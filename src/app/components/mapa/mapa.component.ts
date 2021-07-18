@@ -66,16 +66,27 @@ export class MapaComponent implements OnInit {
     }
   }
 
-  editarMarcador(marcador: Marcador) {
+  editarMarcador( marcador: Marcador ) {
 
     const dialogRef = this.dialog.open( MapaEditarComponent, {
       width: '250px',
-      data: { titulo: marcador.titulo, descripcion: marcador.desc }
+      data: { titulo: marcador.titulo, desc: marcador.desc }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
+     
+      if ( !result ){
+        return;
+      }
+
+      marcador.titulo = result.titulo;
+      marcador.desc = result.desc;
+
+      this.guardarStorage();
+      this.snackbar.open('Marcador actualizado', '', {
+        duration: 1000
+      });
+
     });
 
   }

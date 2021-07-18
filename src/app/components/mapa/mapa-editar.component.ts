@@ -17,18 +17,17 @@ export class MapaEditarComponent implements OnInit {
     public dialogRef: MatDialogRef<MapaEditarComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
 
-      this.forma =fb.group({
+      this.forma = fb.group({
         'titulo': data.titulo,
         'desc': data.desc
       });
-      console.log( data )
     }
 
   ngOnInit(): void {
   }
 
   guardarCambios() {
-    console.log('!');
+    this.dialogRef.close( this.forma.value );
   }
 
   onNoClick(): void {
