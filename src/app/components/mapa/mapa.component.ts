@@ -53,4 +53,14 @@ export class MapaComponent implements OnInit {
     });
   }
 
+  eliminarTodo( ) {
+    if (this.marcadores){
+      this.marcadores = [];
+      this.guardarStorage();
+      this.snackbar.open('Marcadores eliminados', '', {
+        duration: 1000
+      });
+    }
+  }
+
 }
