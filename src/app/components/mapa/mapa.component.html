@@ -18,7 +18,7 @@
                     {{ marcador.desc }}.
                 </p>
                 <div>
-                    <button mat-raised-button color="primary">Editar</button>
+                    <button (click)="editarMarcador( marcador ) "mat-raised-button color="primary">Editar</button>
                     <button (click)="eliminarMarcador(i)" class="ml" mat-raised-button color="warn">Eliminar</button>
                 </div>
 
